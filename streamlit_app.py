@@ -24,6 +24,10 @@ my_dataframe = session.table(
     col('SEARCH_ON')
 )
 
+pd_df=my_dataframe.to_pandas()
+st.dataframe(pd_df)
+st.stop()
+
 ingredients_list = st.multiselect(
     'Choose up to 5 ingredients:',
     my_dataframe,
